@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+#homeMainDiv {
+    width: 100%;
+    
+    min-height: 100vh; 
+    background-color: rgb(240, 234, 249);
+    display: flex;
+    
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    gap: 4px;
+    align-items: center;
+    
+    
+}
