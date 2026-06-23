@@ -25,14 +25,17 @@ const App = () =>{
   },[count])
 
   useEffect(()=>{
-    search.length === 0 ? fetch(`https://pokeapi.co/api/v2/pokemon?offset=${count}&limit=8`)
-    .then((res)=>res.json())
-    .then((res)=>setPokemon(res.results)) 
-    
-    :
+    setTimeout(()=>{
+      search.length === 0 ? fetch(`https://pokeapi.co/api/v2/pokemon?offset=${count}&limit=8`)
+      .then((res)=>res.json())
+      .then((res)=>setPokemon(res.results)) 
+      
+      :
 
+      
+      setPokemon(allPokemon.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase())))
+      },800)
     
-    setPokemon(allPokemon.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase())))
 },[search])
   
   return(
